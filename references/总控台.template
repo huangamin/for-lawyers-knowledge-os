@@ -1,0 +1,87 @@
+---
+type: dashboard
+domain: Governance
+subdomain: ControlCenter
+status: active
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# <知识库名称> Knowledge OS 总控台（Control Center）
+
+> 双模式：①Dataview 动态面板（实时）；②静态快照（无插件时查看）。
+> 目标：单一面板回答"知识库现在什么状态、正在发生什么、该往哪走"。
+
+## ⚡ 一句话状态
+
+（规模 / 规则版本 / 成熟度分布 / 当前主要矛盾）
+
+## 动态面板（Dataview · 实时）
+
+```dataview
+TABLE length(rows) AS 页面数
+WHERE file.path != "CLAUDE.md" AND !contains(file.path, "_Skill工作区")
+GROUP BY regexreplace(file.folder, "/.*", "")
+SORT length(rows) DESC
+```
+
+```dataview
+TABLE rows.file.link AS 页面
+WHERE maturity AND !contains(file.path, "_Skill工作区")
+GROUP BY maturity
+SORT maturity
+```
+
+```dataview
+LIST
+WHERE contains(maturity, "💡") AND status != "archived" AND !contains(file.path, "_Skill工作区")
+SORT file.name
+```
+
+## 一、板块总览
+
+| 板块 | MOC | 内容数 | 职责 | 状态 |
+|---|---|---|---|---|
+| 00 Inbox | ... | ... | 唯一入口 | ... |
+
+## 二、子领域现状
+
+（各板块子目录填充情况）
+
+## 三、核心资料清单
+
+（核心域的关键页面与状态）
+
+## 四、模块关系
+
+```mermaid
+graph TD
+    CLAUDE[CLAUDE.md 宪法] --> 规范[知识库搭建规范 VX.X]
+    规范 --> 治理[治理说明书]
+```
+
+## 五、成熟度面板
+
+⚙️ / 📊 / 💡 / 🌱 分类清单；⚠️ 待决策清单。
+
+## 六、重复 / 冲突 / 过时
+
+（已处理与现存观察）
+
+## 七、空白区
+
+（按供给价值排序）
+
+## 八、进化状态
+
+（规模 / 结构化 / 规则压缩 / 成熟度升级 / 结论）
+
+## 九、统一 Knowledge Metadata
+
+（同规范第 9 节字段表）
+
+## 十、操作区
+
+体检 / 摄入 / 查询 / 规则 / 宪法 / 索引入口。
+
+> 本页由 Vault 扫描生成（YYYY-MM-DD）。数据变化后说"更新总控台"。

@@ -1,0 +1,73 @@
+---
+type: law
+layer: L1 法律
+domain: Governance
+status: active
+maturity: 📊 Evidence
+origin: 内部原创 + 用户决策
+review_after: YYYY-MM-DD
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# <知识库名称> Knowledge OS 搭建规范（VX.X）
+
+## 1. 总体原则
+
+1. 共同进化；2. 单一 Source of Truth；3. 分类不重不漏；4. 文件夹是容器、Link 是骨架；5. 外部资料必须有 Action；6. 学生/个人隐私保护；7. Sync ≠ Backup；8. 先检查后修改、先备份后迁移、先验证后删除；9. 规则分层（先宪法后 SOP）；10. 不增加一级目录；11. 复杂内容放二三级；12. Agent 设计原则：高位阶只定原则，低位阶承载细节。
+
+## 2. 板块与路由
+
+默认 10 板块（可按领域裁剪）：00 Inbox（唯一入口）、01 Strategy、02 核心域、03 科学/基础域、04 教研/产出、05 案例、06 教练/支持、07 运营、08 增长、09 外部研究。每个板块根目录必须只有 1 个 MOC（与板块同名），正文一律放子目录。
+
+## 3. 摄入路由
+
+按内容类型映射到板块/子目录；外部资料 → 09；方法论文 → 03；系统设计 → 02；运营规则 → 07；案例 → 05。
+
+## 4. 成熟度机制
+
+🌱 Observation → 💡 Hypothesis → 🧪 Testing → 📊 Evidence → ⚙️ Protocol；AI 写入默认 ≤ 💡；升级需用户确认 + 来源/实践记录。
+
+## 5. 摄入 / 编译 / 回写 / 体检
+
+- 摄入：Store → Ingest（对齐 takeaways → 路由 → 建页 → 编译）；
+- 编译：矛盾检测（conflict 标注）+ 链式更新（最小修正 + 反链 + log）；
+- 回写：Query 值得沉淀的答案经确认写 synthesis/；
+- 体检：Lint 四查（结构 + 三查 + 治理同步）。
+
+## 6. MOC 规范
+
+板块根目录一个 MOC：使命 + 子目录 + 现有内容 + 相关链接；每轮操作后同步更新。
+
+## 7. Update-in-place
+
+同一概念一页制；禁 v2/副本/终版标题；版本活在 log。例外：raw 只读层、按编号分实体记录。
+
+## 8. 规则治理
+
+### 8.1 位阶
+L0 宪法（CLAUDE.md）→ L1 法律（本规范）→ L2 领域 → L3 SOP → L4 案例 → L5 证据。
+
+### 8.2 案例 → 规则
+Case → Observation → Pattern → Candidate Rule → Conflict Check → Complexity Check → Validation → Rule Promotion。
+
+### 8.3 压缩优先 6 查
+能解释？重复？冲突？改上位？一次性？显著提升？——六问不过则不加规则。
+
+### 8.4 废止制度
+ACTIVE → AMENDED / MERGED / DEPRECATED / RETIRED；元数据模板：rule_id / level / domain / status / created_at / last_validated_at / usage_count / success_rate / conflict_count / exception_count / complexity_cost / replacement_candidate / review_after。
+
+### 8.5 账本最小实装
+review_after 挂规则载体页 frontmatter；统计字段允许留空待采集；超过约十几条升级独立注册表。
+
+## 9. 知识元数据规范（统一 Properties）
+
+所有页面：type / domain / subdomain / layer（治理页必填）/ maturity（知识页必填）/ status / origin / source / parent / related_os / confidence / created / updated。存量页下次编辑补齐。
+
+**附件链接规则（固定）**：附件 wikilink 必须带扩展名（`[[xxx.pdf]]`）。
+
+## 10. 修订记录
+
+| 日期 | 版本 | 变更 |
+|---|---|---|
+| YYYY-MM-DD | VX.X | （每次修订追加） |

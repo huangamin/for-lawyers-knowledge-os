@@ -1,0 +1,58 @@
+---
+type: governance
+layer: L0–L5
+domain: Governance
+origin: 内部原创 + 用户决策
+status: active
+maturity: 📊 Evidence
+confidence: high
+review_after: YYYY-MM-DD
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# <知识库名称> 规则治理与法学类比说明书
+
+> **同步义务（固定）**：每次规则发生变化（新增/合并/修订/废止/升格/降格），必须同步更新本说明书第四节"规则变动记录"。
+
+## ⚖️ 法律严谨点声明（必读）
+
+"实施细则"不是我国统一固定的法规范等级名称；本文的"宪法—法律—法规/规章—实施细则—案例—证据"是**架构类比**，非现实法律位阶。
+
+## 一、位阶总览
+
+| 层级 | 类比 | 载体 | 内容定位 | Agent 能否修改 |
+|---|---|---|---|---|
+| L0 宪法层 | 宪法 | `CLAUDE.md` | 核心元原则、maturity 闸门、update-in-place | 否，用户审查确认 |
+| L1 法律层 | 法律 | `知识库搭建规范.md`（VX.X） | 分类路由、摄入/编译/回写/体检、规则治理 | 需用户确认，版本化修订 |
+| L2 领域层 | 规章 | 板块路由、MOC、Decision Log | 领域规则 | 需领域负责人确认 |
+| L3 SOP 层 | 实施细则（类比） | Skills / 模板 / 操作流程 | 把原则转为执行流程 | 可迭代，不得违反上位 |
+| L4 案例层 | 判例 | 案例库 / 决策记录 | Case ≠ Rule | 案例不得自动升规则 |
+| L5 证据层 | 证据 | raw/（只读） | 文档、数据、日志 | 只读，永不修改 |
+
+## 二、规则演化机制
+
+### 2.1 案例 → 规则
+Case → Observation → Pattern → Candidate Rule → Conflict Check → Complexity Check → Validation → Rule Promotion。单次案例=观察；重复模式=候选规则；稳定规律=正式规则。
+
+### 2.2 压缩优先 6 查
+1. 已有规则能解释？→ 不新增；2. 重复？→ Merge；3. 冲突？→ Amend/Replace；4. 改上位？→ 改上位不增下位；5. 一次性？→ 留 Case；6. 显著提升？→ 不能则拒绝。
+
+### 2.3 废止制度
+状态机：ACTIVE → AMENDED / MERGED / DEPRECATED / RETIRED。元数据模板：rule_id / level / domain / status / created_at / last_validated_at / usage_count / success_rate / conflict_count / exception_count / complexity_cost / replacement_candidate / review_after。
+
+**账本最小实装**：review_after 挂规则载体页 frontmatter；统计字段留空待采集（Lint 时人工确认）；超十几条升级独立注册表。Lint 四查是废止制度的执行机关。
+
+## 三、当前体系映射
+
+（按实际情况填写：各层级当前载体与版本）
+
+## 四、规则变动记录（每次规则变化同步追加）
+
+| 日期 | 变动 | 层级 | 操作 | 影响文件 |
+|---|---|---|---|---|
+| YYYY-MM-DD | （示例）建立分类体系 | L1 | 新增 | 搭建规范 V0.1 |
+
+## 五、检索指引
+
+知全貌读第一节；知变动读第四节；改规则先读第二节，再走流程，最后追加变动记录。

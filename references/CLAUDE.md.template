@@ -1,0 +1,73 @@
+---
+type: constitution
+layer: L0 宪法
+domain: Governance
+status: active
+maturity: 📊 Evidence
+origin: 内部原创 + 用户决策
+review_after: YYYY-MM-DD
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# <知识库名称> Knowledge OS — Vault 操作规则（CLAUDE.md）
+
+> 本文件是知识库操作的 source of truth。任何 Agent 执行操作前必须先读本文件。
+>
+> **核心原则（优先）——共同进化**：学习/工作驱动知识库，知识库反哺学习/工作。一切设计决策以"是否让知识库与学习共同进化"为准。
+>
+> **核心元原则（全局·固定）**：系统进化 ≠ 知识增加；最高目标 = Maximum Generalization + Minimum Complexity。
+
+## 0. 分类规范（必读）
+
+分类唯一基准是 `_Skill工作区/知识库搭建规范.md`；Store / Ingest 前先读它确定目标库与子目录。
+原始文件（PDF/DOCX/其他）一律复制到 `_Skill工作区/raw/<主题>/`（只读层），整理页用 `[[文件名.扩展名]]` 链接（必须带扩展名）。
+根目录只保留板块文件夹 + `_Skill工作区` + `CLAUDE.md` + `知识库总控台.md`。
+
+## 1. Structure（目录结构）
+
+```text
+<VAULT>/
+├── 00 Inbox｜所有知识唯一入口
+├── 01 <领域A>
+├── ...（按领域裁剪，默认 10 板块）
+├── 09 <领域J>
+├── 知识库总控台.md
+└── _Skill工作区/（raw 只读层 / wiki 索引与日志 / _templates / assets）
+```
+
+## 2. Conventions（约定）
+
+1. 知识成熟度三分类：`[Evidence]` 有研究证据 / `[Hypothesis]` 本体系假设 / `[Practice]` 真实实践观察。
+2. **maturity 闸门（固定）**：`#observation → #hypothesis → #testing → #evidence → #protocol`；AI 写入默认 ≤ `💡 #hypothesis`，升级需用户确认。
+3. **双向链接是核心**：新页面必须至少关联 1 个已有页面。
+4. 隐私：涉及个人只允许代号。
+5. 外部资料必须有 Action（So What）。
+6. 命名：简洁、稳定、避免特殊字符；update-in-place。
+7. 不确定信息标 `confidence: low`。
+8. 每轮操作后同步更新板块 MOC 与治理说明书（若涉规则变动）。
+
+## 3. Operations（操作流程）
+
+### Store（存到 raw）
+按主题放入 raw → 更新 log（"已存储，待摄入"）→ 询问是否摄入。
+
+### Ingest（摄入）
+1. 与用户对齐 key takeaways；2. 读规范定路由；3. 按模板建页；4. 矛盾检测（冲突标 `conflict:`）；5. 链式更新旧页；6. 更新 index/log/hot；7. 涉规则变动同步治理说明书；8. 新页至少 1 链接，maturity ≤ 💡。
+
+### Query（查询）
+hot → index → 页面；综合回答附引用；值得沉淀的答案经确认写 `wiki/synthesis/`。
+
+### Archive（归档）
+成熟内容写入 synthesis，更新索引与日志。
+
+### Lint（体检 · 四查）
+1. 结构检查；2. 内容三查（跨页矛盾/过期结论/概念缺口）；3. 治理文件同步检查（版本双比对 + 变动记录比对 + review_after 到期扫描）；4. 只报告，用户确认后修。
+
+## 4. Templates（模板位置）
+
+`_Skill工作区/_templates/`：source / concept / entity / synthesis / comparison。
+
+## 5. Safety Rules
+
+1. 不修改 raw/ 内容或文件名；2. 不删除页面（archived 代替）；3. 每次操作更新 index 与 log；4. 不确定标 low；5. 隐私只用代号；6. 不擅自升级 maturity；7. 不建版本化页面。
